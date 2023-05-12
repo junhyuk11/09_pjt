@@ -1,4 +1,4 @@
-<template lang="">
+```<template lang="">
   <div>
     <h1>Random</h1>
     <button @click="pickRandomMovie">PICK</button>
@@ -7,6 +7,7 @@
     <p id="randomMovieTitle">{{ movieTitle }}</p>
   </div>
 </template>
+
 <script>
 import { mapState } from 'vuex';
 
@@ -31,9 +32,9 @@ export default {
       this.movieTitle = randomMovie.title
     }
   }
-  
 }
 </script>
+
 <style lang="">
   
-</style>
+</style>```
