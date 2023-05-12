@@ -3,6 +3,7 @@
     <img :src="movieImgUrl" alt="">
     <p>{{ movieItem.title }}</p>
     <p>{{ movieItem.overview }}</p>
+    
   </div>
 </template>
 <script>
@@ -25,3 +26,4 @@ export default {
 <style lang="">
   
 </style>
+<!-- /hi -->
