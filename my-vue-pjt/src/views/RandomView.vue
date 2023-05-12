@@ -32,7 +32,6 @@ export default {
       this.movieTitle = randomMovie.title
     }
   }
-
 }
 </script>
 
