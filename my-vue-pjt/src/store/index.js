@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+const TMDB_API = 'https://api.themoviedb.org/3/movie/popular?'
 
 Vue.use(Vuex)
 
@@ -15,7 +17,8 @@ export default new Vuex.Store({
         title: '가오갤',
         isStriked: false,
       },
-    ]
+    ],
+    movieData: null
   },
   getters: {
   },
@@ -31,9 +34,28 @@ export default new Vuex.Store({
         }
         return movie
       })
+    },
+    SAVE_MOVIE_DATA(state, movieData) {
+      state.movieData = movieData
     }
   },
   actions: {
+    getPopularMovies (context) {
+      axios({
+        method: 'get',
+        url: TMDB_API,
+        params: {
+        'api_key': 'a24275eaaea1118ecc0e95751086b277'
+        }
+      })
+      .then((response) => {
+        const movieData = response.data.results
+        console.log(movieData)
+        console.log(typeof(movieData))
+        context.commit('SAVE_MOVIE_DATA', movieData)
+      })
+      
+    },
     createWatchListMovie (context, title) {
       const movie = {
         title: title,
@@ -43,7 +65,7 @@ export default new Vuex.Store({
     },
     toggleStrike (context, watchItem) {
       context.commit('TOGGLE_STRIKE', watchItem)
-    }
+    },
   },
   modules: {
   }

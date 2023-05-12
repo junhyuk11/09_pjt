@@ -9,6 +9,26 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+    }
+  },
+  methods: {
+    getMovieData() {
+      this.$store.dispatch('getPopularMovies')
+    }
+  },
+  components: {
+  },
+  created() {
+    this.getMovieData()
+  }
+}
+
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
