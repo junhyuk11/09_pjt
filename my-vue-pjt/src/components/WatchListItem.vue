@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'TodoItem',
+  name: 'WatchListItem',
   props:{
     watchItem: Object,
   },

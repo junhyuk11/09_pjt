@@ -1,6 +1,6 @@
 <template lang="">
   <div>
-    <h1>WatchList</h1>
+    <h1>보고싶은 영화</h1>
     <WatchListForm/>
     <WatchListItem 
       v-for="(movie, index) in movies" :key="index" :watchItem="movie"

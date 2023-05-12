@@ -21,7 +21,7 @@ export default new Vuex.Store({
   },
   mutations: {
     CREATE_WATCH_LIST_MOVIE(state, movie) {
-      state.todos.push(movie)
+      state.movies.push(movie)
     },
     TOGGLE_STRIKE(state, watchItem) {
       // state.movies 배열에서 클릭한 item을 찾고 해당 isStriked를 반전
@@ -37,6 +37,7 @@ export default new Vuex.Store({
     createWatchListMovie (context, title) {
       const movie = {
         title: title,
+        isStriked: false,
       }
       context.commit('CREATE_WATCH_LIST_MOVIE', movie)
     },
